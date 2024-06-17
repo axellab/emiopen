@@ -1,0 +1,64 @@
+﻿------ Operación Compilar iniciada: proyecto: APIREST(1), configuración: Debug Any CPU ------
+Advertencia: No se puede actualizar la referencia de actualización automática 'newtonsoft.json.dll'. No se encuentra el ensamblado 'C:\Users\Cristian\Documents\Visual Studio 2015\Projects\dinnero2018R1\Bin\Newtonsoft.Json.dll'.
+------ Publicación iniciada: proyecto: APIREST(1), configuración: Debug Any CPU ------
+Conectándose a C:\correos...
+Copiando todos los archivos en la ubicación temporal siguiente para el empaquetado y publicación:
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source.
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\aspnet_compiler.exe -v /APIREST -p C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source -u C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\TempBuildDir 
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(195,0): Advertencia BC42105: La función 'acceso' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(262,0): Advertencia BC42105: La función 'partidos' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(337,0): Advertencia BC42105: La función 'cambiarpartido' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(464,0): Advertencia BC42105: La función 'competencias' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(528,0): Advertencia BC42105: La función 'sedes' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(557,0): Advertencia BC42024: Variable local sin utilizar: 'rst'.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(581,0): Advertencia BC42105: La función 'altasede' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(607,0): Advertencia BC42024: Variable local sin utilizar: 'rst'.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(631,0): Advertencia BC42105: La función 'bajasede' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(699,0): Advertencia BC42105: La función 'jugadores' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(760,0): Advertencia BC42105: La función 'jugadoresgrupo' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(788,0): Advertencia BC42024: Variable local sin utilizar: 'rst'.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(812,0): Advertencia BC42105: La función 'altajugadores' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(839,0): Advertencia BC42024: Variable local sin utilizar: 'rst'.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(863,0): Advertencia BC42105: La función 'modificarjugadores' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(887,0): Advertencia BC42024: Variable local sin utilizar: 'rst'.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(911,0): Advertencia BC42105: La función 'bajajugadores' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(972,0): Advertencia BC42105: La función 'altacompetencia' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(1042,0): Advertencia BC42105: La función 'altapartidos' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(1065,0): Advertencia BC42024: Variable local sin utilizar: 'rst'.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(1089,0): Advertencia BC42105: La función 'bajacompetencia' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(1115,0): Advertencia BC42024: Variable local sin utilizar: 'rst'.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(1139,0): Advertencia BC42105: La función 'altagrupo' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(1166,0): Advertencia BC42024: Variable local sin utilizar: 'rst'.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(1190,0): Advertencia BC42105: La función 'modificaciongrupo' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(1217,0): Advertencia BC42024: Variable local sin utilizar: 'rst'.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(1241,0): Advertencia BC42105: La función 'eliminartmpgrupo' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(1268,0): Advertencia BC42024: Variable local sin utilizar: 'rst'.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(1292,0): Advertencia BC42105: La función 'eliminargrupo' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(1348,0): Advertencia BC42105: La función 'traertmpgrupo' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(1404,0): Advertencia BC42105: La función 'traergrupo' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(1493,0): Advertencia BC42105: La función 'estadocompetencia' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\AspnetCompileMerge\Source\Default.aspx.vb(1580,0): Advertencia BC42105: La función 'activargrupo' no devuelve un valor en todas las rutas de acceso de código. Puede producirse una excepción de referencia nula en tiempo de ejecución cuando se use el resultado.
+Copiando todos los archivos en la ubicación temporal siguiente para el empaquetado y publicación:
+C:\Users\Cristian\AppData\Local\Temp\WebSitePublish\APIREST--770024917\obj\Debug\Package\PackageTmp.
+Eliminando archivos existentes...
+Publicando carpeta /...
+Publicando carpeta bin...
+Publicando carpeta packages...
+Publicando carpeta packages/Microsoft.Net.Compilers.1.0.0...
+Publicando carpeta packages/Microsoft.Net.Compilers.1.0.0/build...
+Publicando carpeta packages/Microsoft.Net.Compilers.1.0.0/tools...
+Publicando carpeta packages/Newtonsoft.Json.12.0.3...
+Publicando carpeta packages/Newtonsoft.Json.12.0.3/lib...
+Publicando carpeta packages/Newtonsoft.Json.12.0.3/lib/net20...
+Publicando carpeta packages/Newtonsoft.Json.12.0.3/lib/net35...
+Publicando carpeta packages/Newtonsoft.Json.12.0.3/lib/net40...
+Publicando carpeta packages/Newtonsoft.Json.12.0.3/lib/net45...
+Publicando carpeta packages/Newtonsoft.Json.12.0.3/lib/netstandard1.0...
+Publicando carpeta packages/Newtonsoft.Json.12.0.3/lib/netstandard1.3...
+Publicando carpeta packages/Newtonsoft.Json.12.0.3/lib/netstandard2.0...
+Publicando carpeta packages/Newtonsoft.Json.12.0.3/lib/portable-net40+sl5+win8+wp8+wpa81...
+Publicando carpeta packages/Newtonsoft.Json.12.0.3/lib/portable-net45+win8+wp8+wpa81...
+La aplicación web se publicó correctamente file:///C:/correos
+
+========== Compilar: 1 correctos o actualizados, 0 incorrectos, 0 omitidos ==========
+========== Publicación: 1 procesados, 0 no procesados, 0 omitidos ==========
