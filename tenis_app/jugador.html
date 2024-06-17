@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <LINK REL=StyleSheet HREF="css/style.css" TYPE="text/css" MEDIA=screen>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>App</title>
+</head>
+
+<body style="font-family: 'Roboto', sans-serif;">
+    <div id="top">
+        <img src="logo.svg">
+    </div>
+
+
+    <div id="cuerpo">
+        <div class="sec3">
+            <div style="margin: 0 auto 0 auto; padding-top: 20px;">
+                <img src='img/dott.jpeg' id="img" class='imgRedonda' />
+                <p id="nombre"><b>ERNETA</b>, Luciana</p>
+                <p id="edad">28 años</p>
+                <div class="pais" style="position:relative;left:-25px" id="pais">
+
+                </div>
+            </div>
+        </div>
+
+        <div id="sec2">
+            <p class="encabezado"><b>ÚLTIMO PARTIDO</b></p>
+            <div id="part"></div>
+
+
+        </div>
+        <div class="sec4">
+            <p class="titulo2" style="text-align:left;"><b>DESEMPEÑO HISTÓRICO</b></p><br>
+        </div>
+
+
+        <div style="display:flex;width:100%">
+            <div style="display:flex; flex-direction:column;width:50%">
+                <p id="ter"
+                    style="width:100%; margin-left: 25px; text-align:center; font-size:30px; color: #af5a24; padding: 0px; margin:0px;">
+                    <b>25</b>
+                </p>
+                <p style="width:100%; margin-left: 25px; text-align:center; padding: 0px; margin:0px;"><b>Torneos
+                        jugados</b>
+                </p>
+            </div>
+            <div style="display:flex; flex-direction:column;width:50%">
+                <p id="tit"
+                    style="width:100%; margin-left: 25px; text-align:center; font-size:30px; color: #af5a24; padding: 0px; margin:0px;">
+                    <b>26</b>
+                </p>
+                <p style="width:100%; margin-left: 25px; text-align:center; padding: 0px; margin:0px;"><b>Títulos</b>
+                </p>
+            </div>
+            <div style="display:flex; flex-direction:column;width:50%">
+                <p id="pj"
+                    style="width:100%; margin-left: 25px; text-align:center; font-size:30px; color: #af5a24; padding: 0px; margin:0px;">
+                    <b>25</b>
+                </p>
+                <p style="width:100%; margin-left: 25px; text-align:center; padding: 0px; margin:0px;"><b>Partidos
+                        jugados</b>
+                </p>
+            </div>
+        </div><br>
+
+        <div style="display:flex;width:100%">
+            <div style="display:flex; flex-direction:column;width:50%">
+                <p id="pg"
+                    style="width:100%; margin-left: 25px; text-align:center; font-size:30px; color: #af5a24; padding: 0px; margin:0px;">
+                    <b>26</b>
+                </p>
+                <p style="width:100%; margin-left: 25px; text-align:center; padding: 0px; margin:0px;"><b>Partidos
+                    </b>
+                </p>
+            </div>
+
+            <div style="display:flex; flex-direction:column;width:50%">
+                <p id="sj"
+                    style="width:100%; margin-left: 25px; text-align:center; font-size:30px; color: #af5a24; padding: 0px; margin:0px;">
+                    <b>25</b>
+                </p>
+                <p style="width:100%; margin-left: 25px; text-align:center; padding: 0px; margin:0px;"><b>Set
+                    </b>
+                </p>
+            </div>
+            <div style="display:flex; flex-direction:column;width:50%">
+                <p id="gg"
+                    style="width:100%; margin-left: 25px; text-align:center; font-size:30px; color: #af5a24; padding: 0px; margin:0px;">
+                    <b>26</b>
+                </p>
+                <p style="width:100%; margin-left: 25px; text-align:center; padding: 0px; margin:0px;"><b>Games</b>
+                </p>
+            </div>
+
+        </div>
+        <br>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <div style="height: 70px"></div>
+
+    <div class="fixed">
+        <div id="barra">
+            <div><img src="img/icono-partidos-01.svg" id="ic1">
+                <p><b>PARTIDOS</b></p>
+            </div>
+            <div style="padding-top: 5px"><img src="img/icono-posiciones-01.svg" id="ic2">
+                <P style="margin-top: 10px">POSICIONES</P>
+            </div>
+            <div><img src="img/icono-jugador-01.svg" id="ic3">
+                <P>JUGADOR</P>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+
+
+    var anuncioParam = 0;
+
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+    anuncioParam = urlParams.get('id');
+    console.log(anuncioParam);
+
+
+
+    window.addEventListener('DOMContentLoaded',
+        function () {
+            console.log('El DOM  esta listo!');
+        })
+
+
+    $(document).ready(function () {
+        $("#ic1").click(() => {
+            window.location.replace('./index.html')
+        })
+        $("#ic2").click(() => {
+            window.location.replace('./categ1.html?id=0')
+        })
+        $("#ic3").click(() => {
+            window.location.replace('./buscar.html')
+        })
+
+        let xhr = new XMLHttpRequest();
+
+        let json = JSON.stringify({
+            type: "C",
+            request: "JUGADORES",
+            id: anuncioParam
+        });
+
+        xhr.open("POST", 'http://44.204.37.84/API/default.aspx')
+        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+
+        xhr.send(json);
+
+        console.log(json)
+        var dev = "";
+        xhr.onload = function () {
+            var json = JSON.parse(xhr.response);
+            console.log(json);
+            var foto = ""
+            for (x of json) {
+                if (x.foto == "0") {
+                    foto = "http://44.204.37.84/ADMIN/fotos/foto.png"
+                } else {
+                    foto = "http://44.204.37.84/ADMIN/fotos/" + x.foto
+                }
+                document.all['img'].src = foto;
+                $("#nombre").html("<b>" + x.apellido + "</b>, " + x.nombre);
+                $("#pais").html("<img src='img/paises/" + x.nombrepais + ".jpeg'>" + x.nombrepais);
+
+
+                nombre = x.nombre;
+                apellido = x.apellido;
+                dni = x.dni;
+                email = x.email;
+                instagram = x.instagram;
+                brazo_habil = x.bh
+                golpe_favorito = x.gp;
+                importe = x.importe;
+                dias = x.dj;
+                nacionalidad = x.nacionalidad;
+                pagoinscripcion = x.pi;
+                nacimiento = x.fn;
+                sexo = x.sexo;
+                foto = x.foto;
+                pp = x.pp
+            }
+        }
+
+
+        let xhr2 = new XMLHttpRequest();
+
+        let json2 = JSON.stringify({
+            type: "C",
+            request: "ESTADISTICA_DESEMPEÑO",
+            id: anuncioParam
+        });
+        xhr2.open("POST", 'http://44.204.37.84/API/default.aspx')
+        xhr2.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+
+        xhr2.send(json2);
+
+        var dev = "";
+        var ter = ""
+        var sj = "";
+        xhr2.onload = function () {
+            var json = JSON.parse(xhr2.response);
+            console.log(json);
+            var foto = ""
+            for (x of json) {
+                ter = "<b>" + x.torneos + "</b>"
+                tit = "<b>" + x.titulos + "</b>"
+                pg = "<b>" + x.pg + "-" + x.pp + "</b>"
+                pj = "<b>" + x.pj + "</b>"
+                sg = "<b>" + x.SG + "-" + x.SP + "</b>"
+                gg = "<b>" + x.GG + "-" + x.GP + "</b>"
+                sj = "<b>" + x.SG + "-" + x.SP + "</b>"
+
+            }
+            $("#ter").html(ter);
+            $("#tit").html(tit);
+            $("#pg").html(pg);
+            $("#pj").html(pj);
+            $("#sg").html(sg);
+            $("#gg").html(gg);
+            $("#sj").html(sj);
+        }
+
+
+
+        let xhr3 = new XMLHttpRequest();
+
+        let json3 = JSON.stringify({
+            type: "C",
+            request: "PROXIMO_PARTIDO",
+            id: anuncioParam
+        });
+        xhr3.open("POST", 'http://44.204.37.84/API/default.aspx')
+        xhr3.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+
+        xhr3.send(json3);
+
+
+        xhr3.onload = function () {
+            var json = JSON.parse(xhr3.response);
+            console.log(json);
+            var dev = ""
+            for (x of json) {
+                dev = dev + "<div class='partido'  onclick='ir(" + x.id + ")' id='" + x.id + "'>"
+                dev = dev + "<p class='tit'>" + x.nombrecomp + "</p>"
+                dev = dev + "<p class='subtit'>" + x.fecha + " " + x.hora + "</p>"
+                dev = dev + "<table class='result' style='font-family: Roboto, Medium!important;'>"
+                dev = dev + "<tr>"
+                dev = dev + "<td>" + x.jugador1 + "</td>"
+                dev = dev + "<td>" + x.ar1 + "</td>"
+                dev = dev + "<td>" + x.ar2 + "</td>"
+                dev = dev + " </tr>"
+                dev = dev + "<tr>"
+                dev = dev + "     <td>" + x.jugador2 + "</td>"
+                dev = dev + "    <td>" + x.br1 + "</td>"
+                dev = dev + "     <td>" + x.br2 + "</td>"
+                dev = dev + "  </tr>"
+                dev = dev + "</table>"
+                dev = dev + "</div>"
+
+            }
+            $("#part").html(dev);
+        }
+
+    })
+    function ir(id) {
+        window.location.replace('./partido.html?id=' + id);
+    }
+</script>
+
+
+</html>

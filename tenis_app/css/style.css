@@ -1,0 +1,527 @@
+﻿@font-face {
+    font-family: 'Roboto Medium';
+    src: url('fonts/Roboto-Medium.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Roboto Regular;
+    src: url(fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Roboto Regular';
+    src: url('ffonts/Roboto-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Roboto Black;
+    src: url(fonts/Roboto-Black.ttf);
+}
+
+@font-face {
+    font-family: Roboto BackItalic;
+    src: url(fonts/Roboto-BlackItalic.ttf);
+}
+
+@font-face {
+    font-family: Roboto Bold;
+    src: url(fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: Roboto BoldItalic;
+    src: url(fonts/Roboto-BoldItalic.ttf);
+}
+
+@font-face {
+    font-family: Roboto Italic;
+    src: url(fonts/Roboto-Italic.ttf);
+}
+
+@font-face {
+    font-family: Roboto Light;
+    src: url(fonts/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: Roboto LightItalic;
+    src: url(fonts/Roboto-LightItalic.ttf);
+}
+
+@font-face {
+    font-family: Roboto Medium;
+    src: url(fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+    font-family: Roboto MediumItalic;
+    src: url(fonts/Roboto-MediumItalic.ttf);
+}
+
+@font-face {
+    font-family: Roboto Thin;
+    src: url(fonts/Roboto-Thin.ttf);
+}
+
+@font-face {
+    font-family: Roboto ThinItalic;
+    src: url(fonts/Roboto-ThinItalic.ttf);
+}
+
+body {
+    background-color: #f7f7f7 !important;
+    padding-left: 10px;
+width:100%!important;
+height:100vh!important;
+}
+
+p {
+    margin: 0x !important;
+    padding: 0px !important;
+}
+
+.fixed {
+    position: fixed;
+    z-index: 5;
+    /*El div será ubicado con relación a la pantalla*/
+    left: 0px !important;
+    /*A la derecha deje un espacio de 0px*/
+    right: 0px !important;
+    /*A la izquierda deje un espacio de 0px*/
+    bottom: 0px!important;
+    /*Abajo deje un espacio de 0px*/
+
+    /*alto del div*/
+}
+
+#barra {
+    background-color: #FFF;
+    border-top: solid #F4F3F2 1px;
+    position: absolute;
+    /*El div será ubicado con relación a la pantalla*/
+    left: 0px;
+    /*A la derecha deje un espacio de 0px*/
+    right: 0px;
+    /*A la izquierda deje un espacio de 0px*/
+    bottom: 0px;
+    /*Abajo deje un espacio de 0px*/
+
+    /*alto del div*/
+    display: flex;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-family: '';
+
+
+}
+
+#barra div {
+    width: 33%;
+    text-align: center;
+
+}
+
+#barra div img {
+    width: 30px;
+    margin-top: 10px;
+
+}
+
+#barra div p {
+    color: #797979;
+    font-size: 12px;
+    margin: 1px;
+    margin-bottom: 10px;
+    font-family: Roboto, 'Regular';
+
+}
+
+#top {
+    text-align: center;
+    border-bottom: solid #cdcdcd 1px;
+    position: fixed;
+    background: #f7f7f7;
+    z-index: 3;
+    /*El div será ubicado con relación a la pantalla*/
+    left: 0px;
+    /*A la derecha deje un espacio de 0px*/
+    right: 0px;
+    /*A la izquierda deje un espacio de 0px*/
+    top: 0px;
+    /*Abajo deje un espacio de 0px*/
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#top img {
+    position: relative;
+    width: 68px;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#top i {
+    position: absolute;
+    left: 10px;
+    top: 34px;
+    font-size: 25px;
+    z-index: 0px;
+    color: gray;
+
+}
+
+#cuerpo {
+    margin-top: 100px;
+}
+
+#sec1 {
+    padding-top: 5px;
+}
+
+
+
+.encabezado {
+    padding-left: 30px;
+    color: #af5a24 !important;
+    font-family: Roboto, Medium;
+    font-size: 18px !important;
+    padding-bottom: 2px;
+    margin-bottom: 5px;
+}
+
+.bot {
+    padding-top: 0px;
+    margin-top: 0px;
+width:100%;
+    display: flex;
+   flex-direction:row;
+overflow-x:auto;
+}
+
+.bot2 {
+    width: 30%;
+    display: flex;
+    padding-top: 10px;
+    margin-top: 0px;
+    text-align: center
+}
+
+
+.bot2 p {
+    padding-top: 0px;
+    margin: 0px;
+
+    text-align: center;
+    color: #4F4E4E
+}
+
+.bot div {
+    padding: 5px !important;
+    background: white;
+    border-radius: 10px 10px 10px 10px;
+    width: 100% !important;
+margin:5px !important;
+
+}
+
+.boton1 {
+    height: 60px;
+    padding: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+
+    background: white;
+    border-radius: 10px 10px 10px 10px;
+    padding-top: 15px;
+
+}
+
+.boton1 img {
+    width: 30px;
+}
+
+
+.boton2 {
+    padding: 5px;
+    padding-top: 15px;
+    height: 60px;
+   margin-left: 10px;
+      padding-left: 15px;
+    padding-right: 3px;
+ 
+    background: white;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.boton2 img {
+    width: 30px;
+}
+
+
+.boton3 {
+    padding: 5px;
+    padding-top: 15px;
+    height: 60px;
+   
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 10px;
+    background: white;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.boton3 img {
+    width: 30px;
+}
+
+
+.activo {
+    background-color: #af5a24 !important;
+    color: white;
+  
+}
+
+.partido {
+    background-color: white;
+    width: 90%;
+    font-size: 12px;
+    border-radius: 10px 10px 10px 10px;
+    padding: 15px;
+    margin-top: 15px;
+
+}
+
+.tit {
+    color: #af5a24;
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+    font-family: Roboto, 'Regular';
+}
+
+.subtit {
+    color: #4F4E4E;
+    margin: 0px;
+    padding: 0px;
+}
+
+.result {
+    width: 100%;
+    border: solid gray 0.25px;
+    margin-top: 15px;
+    font-size: 14px;
+font-family: Roboto, 'Medium'!important;
+   
+
+}
+
+.result tr {
+    border-top: solid black 1px;
+}
+
+table,
+tr {
+    border: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-collapse: collapse;
+}
+
+.result td {
+ font-family: 'Roboto', 'Medium'!important;
+    padding: 5px;
+}
+
+.sec3 {
+    display: flex;
+    flex-direction: row;
+}
+
+.sec3 div {
+    width: 50%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.sec3 div p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.imgRedonda {
+    width: 100px;
+    height: 100px;
+    border-radius: 150px;
+    margin-bottom: 15px;
+
+}
+
+.imgRedonda2 {
+    width: 50px;
+    height: 50px;
+    border-radius: 150px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+}
+
+.pais {
+    width: 100%;
+    text-align: center !important;
+    display: flex;
+   
+    margin: 0px !important;
+    padding: 0px !important;
+    margin-top: 4px !important;
+position: relative!important;
+left:-35px !important;
+
+}
+
+.pais img {
+    width: 30px;
+    margin-right: 10px;
+    margin-top: 0px;
+    margin-left: 60%;
+}
+
+.sec4 {
+    text-align: center;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.sec4 p {
+    width: 100%;
+    text-align: center;
+    color: #af5a24;
+    font-size: 15px;
+    padding-bottom: 2px;
+    margin-bottom: 5px;
+}
+
+.valores {
+    display: flex;
+    color: gray !important;
+    font-size: 12px Im !important
+}
+
+.valores p {
+
+    color: gray !important;
+    font-size: 12px Im !important;
+    font-family: Roboto, 'Regular';
+}
+
+.barra {
+    display: flex;
+    width: 100%
+}
+
+.barra div {
+    width: 50%;
+    height: 10px;
+    margin: 5px;
+    background-color: white;
+}
+
+.izq {
+    border-radius: 10px 0px 0px 10px;
+    padding: 0px !important;
+    text-align: right;
+    margin-top: 0px;
+}
+
+.izq div {
+    margin: 0px !important;
+    position: relative;
+    float: right;
+    width: 50%;
+    height: 10px;
+    margin: 5px;
+    background-color: #af5a24;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.der {
+    border-radius: 0px 10px 10px 0px;
+    padding: 0px !important;
+    margin-top: 0px;
+}
+
+.der div {
+    margin: 0px !important;
+    position: relative;
+    top: 0px !important;
+    left: 0px;
+    width: 50%;
+    height: 10px;
+    margin: 5px;
+    background-color: #af5a24;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.table33 {
+    width: 100%;
+}
+
+.table33 td {
+
+    padding: 0px;
+    margin: 0px;
+    padding-top: 7px;
+}
+
+.input-wrapper {
+    border: white !important;
+    background: none;
+    position: relative;
+    width: 271px;
+}
+
+.input {
+    border: white !important;
+    background: none;
+    padding: 15px 15px 15px 35px;
+    width: 100%;
+}
+
+.input.password {
+    padding: 15px 35px 15px 15px;
+}
+
+.input-icon {
+    color: #191919;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input-icon.password {
+    left: unset;
+    right: 12px;
+}
+
+.titulo2 {
+    font-family: Roboto, 'Medium';
+    color: #af5a24;
+    font-size: 18px
+}
+
+.volver {
+    width: 16px !important;
+    position: absolute !important;
+    left: 10px !important;
+    top: 25px !important;
+    z-index: 0px !important;
+}

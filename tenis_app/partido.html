@@ -1,0 +1,412 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <LINK REL=StyleSheet HREF="css/style.css" TYPE="text/css" MEDIA=screen>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>App</title>
+</head>
+
+<body style="font-family: 'Roboto', sans-serif;">
+    <div id="top">
+        <img src='img/volver.svg' class="volver" id='volver'></img>
+        <img src="logo.svg">
+    </div>
+
+
+    <div id="cuerpo">
+
+        <div class="sec2">
+            <p class="encabezado"><b></b></p><br />
+            <div id="partido1"></div>
+
+
+        </div>
+        <div class="sec3">
+            <div>
+                <div id="jugg1"></div>
+
+                <div style="display:flex; text-align: center; width: 100%; margin-top:0px;padding-top:0px;position:relative;left:-15px">
+                    <p id="apellido1" style="text-align: center; width: 100%; text-align:right"><b></b></p>
+                    <p id="nombre1" style="text-align: center; width: 100%; text-align:left"></p>
+                </div>
+
+                <p id="edad1">28 años</p>
+                <div class="pais"  style="position:relative;left:-25px" id="pais1">
+                    <img src="img/arg.jpeg"> ARG
+                </div>
+            </div>
+            <div>
+                <div id="jugg2"></div>
+
+                <div style="display:flex; text-align: center; width: 100%;margin-top:0px;padding-top:0px;position:relative;left:-15px">
+                    <p id="apellido2" style="text-align: center; width: 100%; text-align:right"><b></b></p>
+                    <p id="nombre2" style="text-align: center; width: 100%; ; text-align:left"></p>
+                </div>
+                <p id="edad2">28 años</p>
+                <div class="pais" style="position:relative;left:-25px" id="pais2">
+                    <img src="img/arg.jpeg"> ARG
+                </div>
+            </div>
+        </div>
+        <div class="sec4">
+            <P class="titulo2"><b>ENFRENTAMIENTO ENTRE ELLOS/AS</b></p>
+
+            <div class="estadistica">
+                <div class="valores">
+                    <p id="pg1" style="width:10%">0</p>
+                    <p style="width:80%">Partidos Ganados</p>
+                    <p id="pg2" style="width:10%">0</p>
+                </div>
+                <div class="barra">
+                    <div id="pgg1" class="izq">
+                        <div></div>
+                    </div>
+                    <div id="pgg2" class="der">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="estadistica">
+                <div class="valores" id="">
+                    <p id="sg1" style="width:10%"></p>
+                    <p style="width:80%">Sets ganados</p>
+                    <p id="sege2" style="width:10%"></p>
+                </div>
+                <div class="barra">
+                    <div id="sgg1" class="izq">
+                        <div></div>
+                    </div>
+                    <div id="sgg2" class="der">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="estadistica">
+                <div class="valores" id="">
+                    <p id="sp1" style="width:10%">0</p>
+                    <p style="width:80%">Sets Perdidos</p>
+                    <p idg="sp2" style="width:10%">0</p>
+                </div>
+                <div class="barra">
+                    <div id="spp1" class="izq">
+                        <div></div>
+                    </div>
+                    <div id="spp2" class="der">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="estadistica">
+                <div class="valores" id="">
+                    <p id="tbg1" style="width:10%">0</p>
+                    <p style="width:80%">Sets Perdidos</p>
+                    <p idg="tbg2" style="width:10%">0</p>
+                </div>
+                <div class="barra">
+                    <div id="tbgg1" class="izq">
+                        <div></div>
+                    </div>
+                    <div id="tbgg2" class="der">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="height: 120px"></div>
+
+    <div class="fixed">
+        <div id="barra">
+            <div><img src="img/icono-partidos-01.svg" id="ic1">
+                <p><b>PARTIDOS</b></p>
+            </div>
+            <div style="padding-top: 5px"><img src="img/icono-posiciones-01.svg" id="ic2">
+                <P style="padding-top: 5px">POSICIONES</P>
+            </div>
+            <div><img src="img/icono-jugador-01.svg" id="ic3">
+                <P>JUGADOR</P>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+
+    var id_1 = 0;
+    var id_2 = 0;
+
+    var anuncioParam = 0;
+
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+    anuncioParam = urlParams.get('id');
+    console.log(anuncioParam);
+
+
+
+
+    window.addEventListener('DOMContentLoaded',
+        function () {
+            console.log('El DOM  esta listo!');
+        })
+
+
+    $(document).ready(function () {
+        $("#ic1").click(() => {
+            window.location.replace('./index.html')
+        })
+        $("#ic2").click(() => {
+            window.location.replace('./categ1.html?id=0')
+        })
+        $("#ic3").click(() => {
+            window.location.replace('./buscar.html')
+        })
+        $("#volver").click(() => {
+            window.location.replace('./index.html')
+        })
+
+        let xhr = new XMLHttpRequest();
+        let json
+        json = JSON.stringify({
+            type: "C",
+            request: "PARTIDOS",
+            idcomp: "0",
+            id: anuncioParam
+        });
+
+        xhr.open("POST", 'http://44.204.37.84/API/default.aspx')
+        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+
+        xhr.send(json);
+
+        var dev = "";
+        xhr.onload = function () {
+            var json = JSON.parse(xhr.response);
+            for (x of json) {
+
+                dev = dev + "<div class='partido' id='" + x.id + "'>"
+                dev = dev + "<p class='tit'>" + x.nombrecompetencia + "</p>"
+                dev = dev + "<p class='subtit'>" + x.fecha + " " + x.hora + "</p>"
+                dev = dev + "<table class='result' style='font-family: Roboto, Medium!important;'>"
+                dev = dev + "<tr>"
+                dev = dev + "<td>" + x.jugador1 + "</td>"
+                dev = dev + "<td>" + x.ar1 + "</td>"
+                dev = dev + "<td>" + x.ar2 + "</td>"
+                dev = dev + " </tr>"
+                dev = dev + "<tr>"
+                dev = dev + "     <td>" + x.jugador2 + "</td>"
+                dev = dev + "    <td>" + x.br1 + "</td>"
+                dev = dev + "     <td>" + x.br2 + "</td>"
+                dev = dev + "  </tr>"
+                dev = dev + "</table>"
+                dev = dev + "</div>"
+                $("#jug1").html(x.jugador1);
+                $("#jug2").html(x.jugador2);
+            }
+            $("#partido1").html(dev);
+
+            var a = (x.ar1 / 6) + (x.ar2 / 6) + (x.ar3 / 6)
+            var b = (x.br1 / 6) + (x.br2 / 6) + (x.br3 / 6)
+
+            var c = (a * 100) / 2
+            var d = (b * 100) / 2
+
+            a = Math.floor(a)
+            b = Math.floor(b)
+
+            c = Math.floor(c)
+            d = Math.floor(d)
+
+            var sg = "<div class='valores'>"
+            sg = sg + "<p style='width:10%'>" + a + "</p>"
+            sg = sg + "<p style='width: 80%'>Sets ganados</p>"
+            sg = sg + "<p style='width: 10%'>" + b + "</p>";
+            sg = sg + "</div> <div class='barra'> <div class='izq' > <div style='width:" + c + "%;'></div> </div> <div class='der' > <div  style='width:" + d + "%;'></div>  </div> </div>"
+
+            $("#sg").html(sg);
+
+        }
+
+        let xhr2 = new XMLHttpRequest();
+        let json2
+        json2 = JSON.stringify({
+            type: "C",
+            request: "PARTIDO_DATOS",
+            id: anuncioParam
+        });
+
+        xhr2.open("POST", 'http://44.204.37.84/API/default.aspx')
+        xhr2.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+
+        xhr2.send(json2);
+
+        var nombre1 = "";
+        var apellido1 = "";
+        var nombre2 = "";
+        var apellido2 = "";
+
+        var edad1 = 0;
+        var edad2 = 0;
+
+        var pais1 = "";
+        var pais2 = "";
+
+
+
+        var contador = 0
+        var foto1 = "";
+        var foto2 = "";
+
+        xhr2.onload = function () {
+            var json = JSON.parse(xhr2.response);
+            console.log(json)
+            for (x of json) {
+
+                if (contador == 1) {
+                    nombre1 = x.nombre;
+                    apellido1 = x.apellido;
+                    edad1 = x.edad;
+                    pais1 = x.pais;
+                    id_1 = x.id;
+                    foto1 = x.foto;
+
+                } else {
+                    nombre2 = x.nombre;
+                    apellido2 = x.apellido;
+                    edad2 = x.edad;
+                    pais2 = x.pais;
+                    id_2 = x.id;
+                    foto2 = x.foto;
+                }
+                contador = 1;
+
+            }
+            $("#nombre1").html(', ' + nombre1);
+            $("#apellido1").html(apellido1);
+            $("#nombre2").html(', ' + nombre2);
+            $("#apellido2").html(apellido2);
+
+            $("#edad1").html(edad1 + " años");
+            $("#edad2").html(edad2 + " años");
+
+            $("#pais1").html("<img src='img/paises/" + pais1 + ".jpeg'>" + pais1);
+            $("#pais2").html("<img src='img/paises/" + pais2 + ".jpeg'>" + pais2);
+
+            $("#jugg1").html("<img style='margin-left: 40px' src='http://44.204.37.84/ADMIN/fotos/" + foto1 + "' class='imgRedonda' />");
+            $("#jugg2").html("<img style='margin-left:40px'  src='http://44.204.37.84/ADMIN/fotos/" + foto2 + "' class='imgRedonda' />");
+
+            let xhr3 = new XMLHttpRequest();
+
+            let json3
+            json3 = JSON.stringify({
+                type: "C",
+                request: "ESTADISTICA_ENFRENTAMIENTO",
+                id1: id_1,
+                id2: id_2
+            });
+
+            console.log(json3)
+            xhr3.open("POST", 'http://44.204.37.84/API/default.aspx')
+            xhr3.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+
+            xhr3.send(json3);
+
+            var contador = 0
+
+            var pg1 = 0
+            var PG2 = 0
+            var SG1 = 0
+            var SG2 = 0
+            var SP1 = 0
+            var SP2 = 0
+
+            var TBG1 = 0
+            var TBG2 = 0
+
+            var totpg = 0;
+            var totsg = 0;
+            var totsp = 0;
+
+
+
+            xhr3.onload = function () {
+                var json = JSON.parse(xhr3.response);
+                console.log(json);
+                for (x of json) {
+                    totpg = parseInt(x.PG1) + parseInt(x.PG2);
+                    totsg = parseInt(x.SG1) + parseInt(x.SG2);
+                    totsp = parseInt(x.SP1) + parseInt(x.SP2);
+                    totTBG = parseInt(x.TBG1) + parseInt(x.TBG1);
+console.log("tot",totsg);
+
+                    $("#pg1").html(x.PG1);
+                    $("#pg2").html(x.PG2);
+
+                    if (totpg > 0) {
+                        $("#pgg1").html("<div style='width:" + (x.PG1 * 100) / totpg + "%'></div>");
+                        $("#pgg2").html("<div style='width:" + (x.PG2 * 100) / totpg + "%'></div>");
+                    } else {
+                        $("#pgg1").html("<div style='width:0%'></div>");
+                        $("#pgg2").html("<div style='width:0%'></div>");
+                    }
+
+                    $("#sg1").html(x.SG1);
+                    $("#sege2").html(x.SG2);
+
+                    if (totsg > 0) {
+                        $("#sgg1").html("<div style='width:" + (x.SG1 * 100) / totsg + "%'></div>");
+                        $("#sgg2").html("<div style='width:" + (x.SG2 * 100) / totsg + "%'></div>");
+                    } else {
+                        $("#sgg1").html("<div style='display:none'></div>");
+                        $("#sgg2").html("<div style='display:none'></div>");
+
+                    }
+
+                    $("#sp1").html(x.SP1);
+                    $("#sp2").html(x.SP2);
+
+                    if (totsp > 0) {
+                        $("#spp1").html("<div style='width:" + (x.SP1 * 100) / totsp + "%'></div>");
+                        $("#spp2").html("<div style='width:" + (x.SP2 * 100) / totsp + "%'></div>");
+                    } else {
+                        $("#spp1").html("<div style='width:0%'></div>");
+                        $("#spp2").html("<div style='width:0%'></div>");
+                    }
+
+                    $("#tbg1").html(x.TBG1);
+                    $("#tbg2").html(x.TBG2);
+
+                    if (totTBG > 0) {
+                        $("#tbgg1").html("<div style='width:" + (x.TBG1 * 100) / totTBG + "%'></div>");
+                        $("#tbgg2").html("<div style='width:" + (x.TBG2 * 100) / totTBG + "'%></div>");
+                    } else {
+                        $("#tbgg1").html("<div style='width:0%'></div>");
+                        $("#tbgg2").html("<div style='width:0%'></div>");
+
+                    }
+
+                }
+                //$("#nombre1").html(', ' + nombre1);
+
+            }
+        }
+    })
+
+</script>
+
+
+</html>

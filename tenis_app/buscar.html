@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <LINK REL=StyleSheet HREF="css/style.css" TYPE="text/css" MEDIA=screen>
+    <title>App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body style="font-family: 'Roboto', sans-serif;">
+    <div id="top">
+        <img src="logo.svg">
+    </div>
+
+
+    <div id="cuerpo">
+        <div id="sec1">
+            <p class="encabezado"><b>JUGADOR</b></p>
+            <div class="input-wrapper">
+                <input type="search" class="input" onchange="buscar(this.value)" placeholder="Buscar">
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="input-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                        clip-rule="evenodd" />
+                </svg>
+            </div>
+            <div style="border-bottom: solid gray 1px; width:100%"></div>
+        </div><br><br>
+        <div id="sec2">
+
+        </div>
+
+    </div>
+
+    <div style="height: 80px;"></div>
+
+
+    <div class="fixed">
+        <div id="barra">
+            <div><img src="img/icono-partidos-01.svg" id="ic1">
+                <p><b>PARTIDOS</b></p>
+            </div>
+            <div style="padding-top: 5px"><img src="img/icono-posiciones-01.svg" id="ic2">
+                <P style="margin-top: 10px">POSICIONES</P>
+            </div>
+            <div><img src="img/icono-jugador-01.svg" id="ic3">
+                <P>JUGADOR</P>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var response = []
+    window.addEventListener('DOMContentLoaded',
+        function () {
+            console.log('El DOM  esta listo!');
+        })
+
+
+    $(document).ready(function () {
+        $("#ic1").click(() => {
+            window.location.replace('./index.html')
+        })
+        $("#ic2").click(() => {
+            window.location.replace('./categ1.html?id=0')
+        })
+        $("#ic3").click(() => {
+            window.location.replace('./buscar.html')
+        })
+
+
+        $("#jugador").click(() => {
+            window.location.replace('./jugador.html?id=' + 1)
+        })
+
+        let json = JSON.stringify({
+            type: "C",
+            request: "JUGADORES",
+            id: "0",
+        });
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", 'http://44.204.37.84/API/default.aspx')
+        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+
+        xhr.send(json);
+
+        var dev = "";
+        var foto = ""
+        xhr.onload = function () {
+
+
+            var json = JSON.parse(xhr.response);
+            response = json;
+            for (x of json) {
+                console.log(x.foto)
+                if (x.foto == "0") {
+                    foto = "http://44.204.37.84/ADMIN/fotos/foto.png"
+                } else {
+                    foto = "http://44.204.37.84/ADMIN/fotos/" + x.foto
+                }
+                dev = dev + "<div onclick='ir(" + x.id + ")' style='border - bottom: solid gray 1px; width: 100 %; display: flex;'>"
+                dev = dev + "<img src=" + foto + " class='imgRedonda2' />"
+                dev = dev + "<p style='margin-top: 10px; width: 70%'><b>" + x.apellido + "</b>, " + x.nombre
+                dev = dev + "</p>"
+                dev = dev + "<img src='img/ir.svg' style='margin-top: -10px; width: 16px' id='jugador' ></img>"
+                dev = dev + "</div> "
+                dev = dev + "<div style='border-bottom: solid gray 1px; margin-bottom: 10px; width: 100 % '></div>"
+                console.log(x);
+            }
+            $("#sec2").html(dev);
+
+        };
+    })
+
+    function ir(id) {
+        window.location.replace('./jugador.html?id=' + id)
+    }
+
+    function buscar(value) {
+        $("#sec2").html("");
+
+        const JUGADORES = response.filter((m) => (m.nombre.includes(value) == true) || (m.apellido.includes(value) == true));
+        console.log(JUGADORES)
+
+        var dev = "";
+        for (x of JUGADORES) {
+            console.log(x.foto)
+            if (x.foto == "0") {
+                foto = "http://44.204.37.84/ADMIN/fotos/foto.png"
+            } else {
+                foto = "http://44.204.37.84/ADMIN/fotos/" + x.foto
+            }
+            dev = dev + "<div onclick='ir(" + x.id + ")' style='border - bottom: solid gray 1px; width: 100 %; display: flex;'>"
+            dev = dev + "<img src=" + foto + " class='imgRedonda2' />"
+            dev = dev + "<p style='margin-top: 10px; width: 70%'><b>" + x.apellido + "</b>, " + x.nombre
+            dev = dev + "</p>"
+            dev = dev + "<img src='img/ir.svg' style='margin-top: -10px; width: 16px' id='jugador' ></img>"
+            dev = dev + "</div> "
+            dev = dev + "<div style='border-bottom: solid gray 1px; margin-bottom: 10px; width: 100 % '></div>"
+            console.log(x);
+        }
+        $("#sec2").html(dev);
+
+    }
+
+</script>
+
+
+</html>

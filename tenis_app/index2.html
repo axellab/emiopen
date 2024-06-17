@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <LINK REL=StyleSheet HREF="css/style.css" TYPE="text/css" MEDIA=screen>
+    <title>App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+
+<body style="font-family: 'Roboto', sans-serif;width:100%">
+    <div id="top">
+        <img src="logo.svg">
+    </div>
+
+
+    <div id="cuerpo">
+        <div id="sec1">
+            <p class="encabezado"><b>CATEGORIAS</b></p>
+           <div class="bot" id="bot"  >
+
+            </div>
+        </div>
+        <div id="sec2"><br/>
+            <p class="encabezado"><b>PARTIDOS</b></p>
+            <div id="dev">
+                <div class="partido" id="p1">
+                    <p class="tit">Mac A - Zona de grupos</p>
+                    <p class="subtit">Sábado 18-05</p>
+                    <table class="result">
+                        <tr>
+                            <td><b>ERNETA</b>, Luciana</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><b>ERNETA</b>, Luciana</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
+
+
+                </div>
+                <div class="partido" id="p1">
+                    <p class="tit">Mac A - Zona de grupos</p>
+                    <p class="subtit">Sábado 18-05</p>
+                    <table class="result">
+                        <tr>
+                            <td><b>ERNETA</b>, Luciana</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><b>ERNETA</b>, Luciana</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="height:80px;"></div>
+
+    <div class="fixed">
+        <div id="barra">
+            <div><img src="img/icono-partidos-01.svg" id="ic1">
+                <p><b>PARTIDOS</b></p>
+            </div>
+            <div style="padding-top: 5px"><img src="img/icono-posiciones-01.svg" id="ic2">
+                <P style="margin-top: 10px">POSICIONES</P>
+            </div>
+            <div><img src="img/icono-jugador-01.svg" id="ic3">
+                <P>JUGADOR</P>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var anuncioParam = 0;
+
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+    anuncioParam = urlParams.get('id');
+    console.log(anuncioParam);
+    window.addEventListener('DOMContentLoaded',
+        function () {
+            console.log('El DOM  esta listo!');
+        })
+
+
+    $(document).ready(function () {
+        $("#ic1").click(() => {
+            window.location.replace('./index.html')
+        })
+        $("#ic2").click(() => {
+            window.location.replace('./categ1.html?id=0')
+        })
+        $("#ic3").click(() => {
+            window.location.replace('./buscar.html')
+        })
+
+        let xhr = new XMLHttpRequest();
+        let json
+
+
+
+        if (anuncioParam == null) {
+            json = JSON.stringify({
+                type: "C",
+                request: "PARTIDOS_APP",
+                idcomp: "0",
+                id: "0"
+            });
+        } else {
+            json = JSON.stringify({
+                type: "C",
+                request: "PARTIDOS_APP",
+                idcomp: anuncioParam,
+                id: "0"
+            });
+        }
+
+
+        xhr.open("POST", 'http://44.204.37.84/API/default.aspx')
+        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+
+        xhr.send(json);
+        console.log(json)
+
+        var dev = "";
+        xhr.onload = function () {
+            var json = JSON.parse(xhr.response);
+console.log(json);
+            for (x of json) {
+                if(x.estado == 'Finalizado'){
+                    dev = dev + "<div class='partido' id='" + x.id + "' onclick='ir(" + x.id + ")'>"
+                    dev = dev + "<p class='tit'><b>" + x.nombrecompetencia + "</b></p>"
+                    dev = dev + "<p class='subtit'>" + x.fecha + " " + x.hora + "</p>"
+                    dev = dev + "<table class='result' style='font-family: Roboto, Medium!important;'>"
+                    dev = dev + "<tr>"
+                    dev = dev + "<td>" + x.jugador1 + "</td>"
+                    dev = dev + "<td>" + x.ar1 + "</td>"
+                    dev = dev + "<td>" + x.ar2 + "</td>"
+                    dev = dev + " </tr>"
+                    dev = dev + "<tr>"
+                    dev = dev + "     <td>" + x.jugador2 + "</td>"
+                    dev = dev + "    <td>" + x.br1 + "</td>"
+                    dev = dev + "     <td>" + x.br2 + "</td>"
+                    dev = dev + "  </tr>"
+                    dev = dev + "</table>"
+                    dev = dev + "</div>"
+                }
+            }
+            $("#dev").html(dev);
+        }
+
+
+
+        let xhr2 = new XMLHttpRequest();
+
+        let json2 = JSON.stringify({
+            type: "C",
+            request: "COMPETENCIAS",
+            id: "0",
+        });
+
+        xhr2.open("POST", 'http://44.204.37.84/API/default.aspx')
+        xhr2.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+
+        xhr2.send(json2);
+
+        if (anuncioParam == null) {
+            var dev2 = "<div class='activo' style='width:100px !important' onclick='index()'>Todas</div>";
+        } else {
+            var dev2 = "<div  style='color:#797979;width:100px !important' onclick='index()'>Todas</div>";
+        }
+        xhr2.onload = function () {
+            var json = JSON.parse(xhr2.response);
+            for (x of json) {
+               
+                    if (anuncioParam == x.id) {
+                        dev2 = dev2 + "<div class='activo' style='width:170px !important;white-space:nowrap; text-overflow:ellipsis;'  onclick='traer(" + x.id + ")'>" + x.nombre + "</div>"
+                    } else {
+                        dev2 = dev2 + "<div class='boton'  style='color:#797979;white-space:nowrap; text-overflow:ellipsis;' onclick='traer(" + x.id + ")'>" + x.nombre + "</div>"
+                    }
+                
+                console.log(x);
+            }
+            $("#bot").html(dev2);
+
+        };
+
+
+
+
+        $("#p1").click(() => {
+            window.location.replace('./partido.html?id=' + 1)
+        })
+    })
+
+    function traer(id) {
+        window.location.replace('./index.html?id=' + id);
+    }
+    function index() {
+        window.location.replace('./index.html');
+    }
+    function ir(id) {
+        window.location.replace('./partido.html?id=' + id);
+    }
+
+</script>
+
+
+</html>

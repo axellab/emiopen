@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <LINK REL=StyleSheet HREF="css/style.css" TYPE="text/css" MEDIA=screen>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>App</title>
+</head>
+
+<body style="font-family: 'Roboto', sans-serif;">
+    <div id="top">
+        <img src='img/volver.svg' class="volver" id='volver'></img>
+        <img src="logo.svg">
+    </div>
+
+
+    <div id="cuerpo">
+
+        <div id="sec2">
+
+
+        </div>
+        <br />
+        <div id="dev">
+
+        </div>
+
+    </div>
+
+    <div style="height: 80px"></div>
+    <div class="fixed">
+        <div id="barra">
+            <div><img src="img/icono-partidos-01.svg" id="ic1">
+                <p><b>PARTIDOS</b></p>
+            </div>
+            <div style="padding-top: 5px"><img src="img/icono-posiciones-01.svg" id="ic2">
+                <P style="margin-top: 10px">POSICIONES</P>
+            </div>
+            <div><img src="img/icono-jugador-01.svg" id="ic3">
+                <P>JUGADOR</P>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var anuncioParam = 0;
+
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+    anuncioParam = urlParams.get('id');
+    console.log(anuncioParam);
+    window.addEventListener('DOMContentLoaded',
+        function () {
+            console.log('El DOM  esta listo!');
+        })
+
+
+    $(document).ready(function () {
+        $("#ic1").click(() => {
+            window.location.replace('./index.html')
+        })
+        $("#ic2").click(() => {
+            window.location.replace('./categ1.html?id=0')
+        })
+        $("#ic3").click(() => {
+            window.location.replace('./buscar.html')
+        })
+        $("#volver").click(() => {
+            window.location.replace('./categ1.html?id=0')
+        })
+
+        let xhr = new XMLHttpRequest();
+        var idcomp = 0
+
+
+        idcomp = anuncioParam;
+
+        let json = JSON.stringify({
+            type: "C",
+            request: "ESTADISTICAS",
+            id: anuncioParam
+        });
+
+        xhr.open("POST", 'http://44.204.37.84/API/default.aspx')
+        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+
+        xhr.send(json);
+        console.log("json", json)
+        var dev4 = ""
+        var ultima = 0
+        var contador = 1
+        xhr.onload = function () {
+            var json = JSON.parse(xhr.response);
+            json.sort((a, b) => {
+                return b.pg - a.pg;
+            });
+            console.log("joson", json);
+            console.log("dev", json);
+            for (x of json) {
+
+                if (ultima == 0) {
+                    dev4 = dev4 + " <p class='encabezado' style='margin-top:10px'><b>" + x.nombrecomp +  "</b></p>"
+                    dev4 = dev4 + "<div class='partido'  style='margin-top:0px'>"
+                    dev4 = dev4 + " <table class='table33' style='border:white'>"
+                    dev4 = dev4 + "  <thead>"
+                    dev4 = dev4 + "      <tr style='border:white; FONT-SIZE: 10PX; text-align:center'><td></td><td></td>  <td>PJ</td><td>PG</td><td>PP</td><td>DS</td><td>SG</td><td>SP</td><td>DG</td><td>GP</td></tr></thead>"
+                    dev4 = dev4 + "  <tr style='border:white;  FONT-SIZE: 10PX; text-align:center'>"
+                    dev4 = dev4 + "   <td>" + contador + "</td>"
+                    dev4 = dev4 + "  <td><b> " + x.nombre + "</td>"
+                    dev4 = dev4 + "   <td>" + x.PJ + "</td>"
+                    dev4 = dev4 + "    <td>" + x.PG + "</td>"
+                    dev4 = dev4 + "    <td>" + x.PP + "</td>"
+                    dev4 = dev4 + "    <td>" + x.DS + "</td>"
+                    dev4 = dev4 + "    <td>" + x.SG + "</td>"
+                    dev4 = dev4 + "    <td>" + x.SP + "</td>"
+                    dev4 = dev4 + "    <td>" + x.DG + "</td>"
+                    dev4 = dev4 + "    <td>" + x.GP + "</td>"
+                    dev4 = dev4 + " </tr>"
+                    contador = contador + 1;
+                    ultima = x.idcompetencia;
+                } else {
+                    if (ultima != x.idcompetencia) {
+                        contador = 1;
+                        dev4 = dev4 + " </table>"
+                        dev4 = dev4 + " </div>"
+                        dev4 = dev4 + " <p class='encabezado' style='margin-top:10px'><b>" + x.nombrecomp +  "</b></p>"
+                        dev4 = dev4 + "<div class='partido' style='margin-top:0px'>"
+                        dev4 = dev4 + " <table class='table33' style='border:white;font-family: Roboto, Medium!important;'>"
+                        dev4 = dev4 + "  <thead>"
+                        dev4 = dev4 + "      <tr style='border:white; FONT-SIZE: 10PX; text-align:center'><td></td><td></td><td>PJ</td><td>PG</td></tr></thead>"
+                        dev4 = dev4 + "  <tr style='border:white;  FONT-SIZE: 10PX; text-align:center'>"
+                        dev4 = dev4 + "   <td>" + contador + "</td>"
+                        dev4 = dev4 + "  <td><b>" + x.nombre + "</td>"
+                        dev4 = dev4 + "   <td>" + x.PJ + "</td>"
+                        dev4 = dev4 + "    <td>" + x.PG + "</td>"
+                        dev4 = dev4 + "    <td>" + x.PP + "</td>"
+                        dev4 = dev4 + "    <td>" + x.DS + "</td>"
+                        dev4 = dev4 + "    <td>" + x.SG + "</td>"
+                        dev4 = dev4 + "    <td>" + x.SP + "</td>"
+                        dev4 = dev4 + "    <td>" + x.DG + "</td>"
+                        dev4 = dev4 + "    <td>" + x.GP + "</td>"
+                        dev4 = dev4 + " </tr>"
+                        contador = contador + 1;
+                        ultima = x.idcompetencia;
+
+                    } else {
+                        dev4 = dev4 + "  <tr style='border:white;  FONT-SIZE: 10PX; text-align:center'>"
+                        dev4 = dev4 + "   <td>" + contador + "</td>"
+                        dev4 = dev4 + "  <td><b>" + x.nombre + "</td>"
+                        dev4 = dev4 + "   <td>" + x.PJ + "</td>"
+                        dev4 = dev4 + "    <td>" + x.PG + "</td>"
+                        dev4 = dev4 + "    <td>" + x.PP + "</td>"
+                        dev4 = dev4 + "    <td>" + x.DS + "</td>"
+                        dev4 = dev4 + "    <td>" + x.SG + "</td>"
+                        dev4 = dev4 + "    <td>" + x.SP + "</td>"
+                        dev4 = dev4 + "    <td>" + x.DG + "</td>"
+                        dev4 = dev4 + "    <td>" + x.GP + "</td>"
+                        dev4 = dev4 + " </tr>"
+                        contador = contador + 1;
+                        ultima = x.idcompetencia;
+                    }
+                }
+            }
+            dev4 = dev4 + " </table>"
+            dev4 = dev4 + " </div>"
+            $("#sec2").html(dev4);
+
+        };
+
+
+        let xhr2 = new XMLHttpRequest();
+        let json2
+
+
+
+
+        json2 = JSON.stringify({
+            type: "C",
+            request: "PARTIDOS",
+            idcomp: anuncioParam,
+            id: "0"
+        });
+
+
+
+        xhr2.open("POST", 'http://44.204.37.84/API/default.aspx')
+        xhr2.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+
+        xhr2.send(json2);
+
+        var dev = "";
+        xhr2.onload = function () {
+            var json = JSON.parse(xhr2.response);
+
+            for (x of json) {
+
+                dev = dev + "<div class='partido' id='" + x.id + "' onclick='ir(" + x.id + ")'>"
+                dev = dev + "<p class='tit'><b>" + x.nombrecompetencia + "</b></p>"
+                dev = dev + "<p class='subtit'>" + x.fecha + " " + x.hora + "</p>"
+                dev = dev + "<table class='result'>"
+                dev = dev + "<tr>"
+                dev = dev + "<td>" + x.jugador1 + "</td>"
+                dev = dev + "<td>" + x.ar1 + "</td>"
+                dev = dev + "<td>" + x.ar2 + "</td>"
+                dev = dev + " </tr>"
+                dev = dev + "<tr>"
+                dev = dev + "     <td>" + x.jugador2 + "</td>"
+                dev = dev + "    <td>" + x.br1 + "</td>"
+                dev = dev + "     <td>" + x.br2 + "</td>"
+                dev = dev + "  </tr>"
+                dev = dev + "</table>"
+                dev = dev + "</div>"
+
+            }
+            $("#dev").html(dev);
+        }
+
+    })
+    function ir(id) {
+        window.location.replace('./partido.html?id=' + id);
+    }
+
+</script>
+
+
+
+</html>
