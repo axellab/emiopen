@@ -1,0 +1,59 @@
+html, body {
+  position: relative;
+  height: 100%;
+}
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+.margen2{
+  position:relative;
+  top: -30px;
+
+}
+.swiper-container {
+  width: 100% !important;
+  height: 98% !important;
+  
+}
+.swiper-slide {
+  width: auto;
+  text-align: center;
+  font-size: 18px;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  vertical-align:top;
+}
+.swiper-container-v {
+  background: #eee;
+}
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  color: #000;
+  opacity: 1;
+
+}
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #007aff;
+}
+.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
+  width: 30px;
+  height: 30px;
+  padding: .5em;
+  text-align: center;
+  line-height: 30px;
+  font-size: 10px;
+}
